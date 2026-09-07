@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     "rest_framework",
     "productApp",
     "accounts",
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -180,3 +182,12 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
 }
+
+# # Allow all origins (use cautiously in production)
+# CORS_ALLOW_ALL_ORIGINS = True
+# # Allow credentials (e.g., cookies, tokens)
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOWED_ORIGINS = [
+#    "https://your-frontend-domain.com",
+#    "http://localhost:3000", # Example for local development
+# ]
